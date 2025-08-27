@@ -1,0 +1,493 @@
+{
+	"info": {
+		"_postman_id": "9c925f35-1707-4b8d-b5aa-4befbe2a990f",
+		"name": "Woliba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17470385"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Send Invitation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-ADMIN-API-SECRET",
+								"value": "W0lib@2025",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Tejas",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "S",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "tejas@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{apiVerion}}/admin/invite",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{apiVerion}}",
+								"admin",
+								"invite"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/{{apiVerion}}/profile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{apiVerion}}",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Tejas",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "S",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "tejas@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "2000-01-01",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "9876543210",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"type": "file",
+									"src": "/D:/Downloads Tejas/avatars/avatar-1.png"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{apiVerion}}/profile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{apiVerion}}",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modules",
+			"item": [
+				{
+					"name": "Interests",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/{{apiVerion}}/wellness/interests",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{apiVerion}}",
+										"wellness",
+										"interests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "interests[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "interests[]",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{apiVerion}}/wellness/interests",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{apiVerion}}",
+										"wellness",
+										"interests"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pillars",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/{{apiVerion}}/wellness/pillars",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{apiVerion}}",
+										"wellness",
+										"pillars"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "pillars[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "pillars[]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/{{apiVerion}}/wellness/pillars",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"{{apiVerion}}",
+										"wellness",
+										"pillars"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login With Link",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/{{apiVerion}}/magic-link/user?token=2xrYVpROXcvgsWZbQxoBs5TzaDOBFgoe8vIgf6ilpxORZP5T2iKITGD4G04ddaoc",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{apiVerion}}",
+						"magic-link",
+						"user"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "2xrYVpROXcvgsWZbQxoBs5TzaDOBFgoe8vIgf6ilpxORZP5T2iKITGD4G04ddaoc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login With OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "tejas@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "tejas",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "s",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/{{apiVerion}}/send-otp",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{apiVerion}}",
+						"send-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "tejas@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "otp",
+							"value": "160119",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/{{apiVerion}}/verify-otp",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{apiVerion}}",
+						"verify-otp"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://woliba.test/api"
+		},
+		{
+			"key": "apiVerion",
+			"value": "v1"
+		},
+		{
+			"key": "accessToken",
+			"value": "6|ujVQYILZeicgtBisIlHWyI7gFy7uOiOphD1ZuhA6fde77237",
+			"type": "string"
+		}
+	]
+}
